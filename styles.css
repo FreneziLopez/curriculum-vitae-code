@@ -1,0 +1,730 @@
+
+/* ==========================================
+   CURRÍCULUM VITAE - MAURICIO LÓPEZ
+   Diseño moderno / Dark Navy / Tech Style
+   ========================================== */
+
+/* ---------- VARIABLES GENERALES ---------- */
+
+:root {
+    --fondo: #07111f;
+    --fondo-secundario: #0b1729;
+    --tarjeta: #101f34;
+    --tarjeta-clara: #152740;
+
+    --azul: #2563eb;
+    --cyan: #38bdf8;
+    --cyan-claro: #7dd3fc;
+
+    --texto: #e8f0fa;
+    --texto-secundario: #a6b8ce;
+    --borde: #253b55;
+
+    --radio: 16px;
+    --sombra: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- REINICIO CSS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(37, 99, 235, 0.15),
+            transparent 35%
+        ),
+        var(--fondo);
+
+    color: var(--texto);
+    line-height: 1.7;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.contenedor {
+    width: min(1150px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* ---------- ENCABEZADO ---------- */
+
+.encabezado {
+    position: relative;
+    overflow: hidden;
+
+    padding: 75px 0 105px;
+
+    background: linear-gradient(
+        135deg,
+        #071426 0%,
+        #112c50 55%,
+        #0b1b31 100%
+    );
+
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Cuadrícula tecnológica */
+
+.encabezado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(56, 189, 248, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56, 189, 248, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Resplandor decorativo */
+
+.encabezado::after {
+    content: "";
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -100px;
+    top: -180px;
+
+    background: rgba(37, 99, 235, 0.24);
+    filter: blur(95px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.encabezado .contenedor {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.profesion {
+    display: inline-block;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cyan-claro);
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-left: 4px solid var(--cyan);
+    padding-left: 15px;
+    border-right: 4px solid var(--cyan);
+    padding-right: 15px;
+
+}
+
+/* ---------- ESTRUCTURA PRINCIPAL ---------- */
+
+.cv-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 0.85fr)
+        minmax(0, 1.8fr);
+
+    gap: 28px;
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: -45px;
+    margin-bottom: 60px;
+
+    align-items: start;
+}
+
+/* ---------- COLUMNA LATERAL ---------- */
+
+.barra-lateral {
+    background: linear-gradient(
+        180deg,
+        #122742 0%,
+        #0c1b30 100%
+    );
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    padding: 30px 26px;
+    box-shadow: var(--sombra);
+}
+
+.barra-lateral section {
+    margin-bottom: 32px;
+    padding-bottom: 26px;
+
+    border-bottom: 1px solid var(--borde);
+}
+
+.barra-lateral section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.barra-lateral h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Línea luminosa antes del título */
+
+.barra-lateral h2::before {
+    content: "";
+
+    width: 4px;
+    height: 20px;
+
+    border-radius: 4px;
+    background: var(--cyan);
+
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    flex-shrink: 0;
+}
+
+.barra-lateral h3,
+.barra-lateral h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    color: var(--cyan-claro);
+
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.barra-lateral p {
+    font-size: 0.92rem;
+    color: var(--texto-secundario);
+
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+}
+
+.barra-lateral strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.barra-lateral ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.barra-lateral li {
+    position: relative;
+
+    font-size: 0.92rem;
+    color: var(--texto-secundario);
+
+    padding-left: 18px;
+    margin-bottom: 9px;
+}
+
+/* Viñetas personalizadas */
+
+.barra-lateral li::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 10px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: var(--cyan);
+}
+
+/* ---------- ENLACES ---------- */
+
+a {
+    color: var(--cyan-claro);
+
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+
+    text-shadow:
+        0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* ---------- CONTENIDO PRINCIPAL ---------- */
+
+.contenido-principal {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contenido-principal section {
+    position: relative;
+
+    background: linear-gradient(
+        145deg,
+        var(--tarjeta) 0%,
+        #0d1b2e 100%
+    );
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    padding: 30px 34px;
+
+    box-shadow: var(--sombra);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Interacción al pasar el mouse */
+
+.contenido-principal section:hover {
+    border-color: rgba(56, 189, 248, 0.55);
+    transform: translateY(-2px);
+}
+
+/* ---------- TÍTULOS DE SECCIÓN ---------- */
+
+.contenido-principal h2 {
+    position: relative;
+
+    font-size: 1.3rem;
+    font-weight: 750;
+
+    color: #ffffff;
+
+    margin-bottom: 24px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Línea decorativa debajo del título */
+
+.contenido-principal h2::after {
+    content: "";
+
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    width: 65px;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--cyan)
+    );
+
+    border-radius: 10px;
+}
+
+.contenido-principal p {
+    font-size: 0.96rem;
+
+    color: var(--texto-secundario);
+    line-height: 1.85;
+
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.contenido-principal strong {
+    color: var(--texto);
+}
+
+/* ---------- ELEMENTOS DEL CV ---------- */
+
+.elemento-cv {
+    position: relative;
+
+    padding-left: 22px;
+    margin-bottom: 30px;
+
+    border-left: 2px solid var(--borde);
+}
+
+.elemento-cv:last-child {
+    margin-bottom: 0;
+}
+
+/* Indicador tipo línea de tiempo */
+
+.elemento-cv::before {
+    content: "";
+
+    position: absolute;
+    left: -6px;
+    top: 6px;
+
+    width: 10px;
+    height: 10px;
+
+    background: var(--cyan);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+.elemento-cv h3 {
+    color: #ffffff;
+
+    font-size: 1.12rem;
+    font-weight: 700;
+
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.elemento-cv .institucion {
+    color: var(--cyan-claro);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    margin-bottom: 2px;
+}
+
+.elemento-cv .fecha {
+    display: inline-block;
+
+    color: #a9c5e7;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+
+    background: rgba(37, 99, 235, 0.15);
+
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 6px;
+
+    padding: 3px 12px;
+    margin: 8px 0 15px;
+}
+
+/* Listas de experiencia */
+
+.contenido-principal ul {
+    padding-left: 22px;
+    margin-top: 12px;
+}
+
+.contenido-principal li {
+    color: var(--texto-secundario);
+
+    font-size: 0.94rem;
+    line-height: 1.75;
+
+    margin-bottom: 10px;
+    padding-left: 3px;
+}
+
+.contenido-principal li::marker {
+    color: var(--cyan);
+}
+
+/* ---------- PERFIL PROFESIONAL ---------- */
+
+#objetivo {
+    border-top: 3px solid var(--azul);
+}
+
+#objetivo p {
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/* ---------- CERTIFICACIONES ---------- */
+
+#certificaciones .elemento-cv {
+    padding-bottom: 10px;
+}
+
+#certificaciones a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.92rem;
+
+    border-bottom: 1px dashed var(--cyan);
+    padding-bottom: 3px;
+}
+
+#certificaciones a:hover {
+    text-decoration: none;
+    border-bottom-style: solid;
+}
+
+/* ---------- PIE DE PÁGINA ---------- */
+
+.pie-pagina {
+    text-align: center;
+
+    background: #081321;
+    border-top: 1px solid var(--borde);
+
+    padding: 28px 20px;
+}
+
+.pie-pagina p {
+    font-size: 0.85rem;
+
+    color: var(--texto-secundario);
+    letter-spacing: 0.4px;
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 900px) {
+
+    .cv-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .barra-lateral {
+        padding: 28px;
+    }
+
+    .contenido-principal section {
+        padding: 28px;
+    }
+
+    .encabezado {
+        padding: 65px 0 90px;
+    }
+
+}
+
+/* ---------- CELULARES ---------- */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        width: calc(100% - 28px);
+    }
+
+    .encabezado {
+        padding: 50px 0 80px;
+    }
+
+    .encabezado h1 {
+        font-size: 2rem;
+        letter-spacing: -0.5px;
+    }
+
+    .profesion {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .cv-layout {
+        margin-top: -35px;
+        margin-bottom: 35px;
+        gap: 18px;
+    }
+
+    .barra-lateral {
+        padding: 24px 20px;
+    }
+
+    .contenido-principal {
+        gap: 18px;
+    }
+
+    .contenido-principal section {
+        padding: 24px 20px;
+    }
+
+    .contenido-principal h2 {
+        font-size: 1.15rem;
+    }
+
+    .elemento-cv {
+        padding-left: 18px;
+    }
+
+    .pie-pagina {
+        padding: 22px 15px;
+    }
+
+}
+
+/* ---------- ACCESIBILIDAD ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
+
+/* ---------- IMPRESIÓN / PDF ---------- */
+
+@media print {
+
+    :root {
+        --texto: #111827;
+        --texto-secundario: #374151;
+        --cyan: #0369a1;
+        --cyan-claro: #075985;
+        --borde: #d1d5db;
+    }
+
+    body {
+        background: white !important;
+        color: #111827;
+        font-size: 11pt;
+    }
+
+    .encabezado {
+        background: white !important;
+        padding: 20px 0 30px;
+        border-bottom: 2px solid #0369a1;
+    }
+
+    .encabezado::before,
+    .encabezado::after {
+        display: none;
+    }
+
+    .encabezado h1 {
+        color: #111827;
+    }
+
+    .profesion {
+        color: #075985;
+    }
+
+    .cv-layout {
+        display: grid;
+        grid-template-columns: 32% 1fr;
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .barra-lateral,
+    .contenido-principal section {
+        background: white !important;
+        box-shadow: none;
+        border: 1px solid #d1d5db;
+        break-inside: avoid;
+    }
+
+    .barra-lateral h2,
+    .contenido-principal h2,
+    .elemento-cv h3,
+    .barra-lateral strong,
+    .contenido-principal strong {
+        color: #111827;
+    }
+
+    .barra-lateral p,
+    .barra-lateral li,
+    .contenido-principal p,
+    .contenido-principal li {
+        color: #374151;
+    }
+
+    .barra-lateral h3,
+    .barra-lateral h4,
+    .elemento-cv .institucion {
+        color: #075985;
+    }
+
+    .elemento-cv .fecha {
+        color: #075985;
+        background: #eff6ff;
+    }
+
+    a {
+        color: #075985;
+    }
+
+    .contenido-principal section:hover {
+        transform: none;
+    }
+
+    .pie-pagina {
+        background: white;
+    }
+
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+}
